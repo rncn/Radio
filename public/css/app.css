@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "Source Han Sans Regular";
+  src: url(/fonts/SourceHanSans-Regular.woff) format("otf"), url(/fonts/SourceHanSans-Regular.woff) format("woff");
+}
+
+body {
+  background-color: #1f1f1f;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Source Han Sans Regular", sans-serif !important;
+  font-weight: 900;
+}
+
+body .header {
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 0 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000;
+}
+
+body .header .brand {
+  margin: 0;
+}
+
+body .header .brand a {
+  font-family: "Source Han Sans Regular", sans-serif !important;
+  font-size: 20px;
+  color: #f34b3f;
+  text-decoration: none;
+}
+
+body .header .brand:hover {
+  text-decoration: none;
+}
+
+body .header .navbar ul {
+  margin: 0;
+  display: flex;
+  list-style: none;
+}
+
+body .header .navbar ul li {
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+body .header .navbar ul li a {
+  font-size: 25px;
+  color: #ffffff;
+}
+
+body .header .navbar ul li a:hover {
+  text-decoration: none;
+  color: #f34b3f;
+}
+
+body .header .navbar ul li a .icon {
+  display: none;
+}
+
+body .header .navbar ul li a .text {
+  display: inline;
+}
+
+body .header .header-post-button {
+  max-width: 100px;
+  height: 35px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  background-color: #f34b3f;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+  overflow: hidden;
+}
+
+body .header .header-post-button a {
+  display: block;
+  line-height: 35px;
+  color: #1f1f1f;
+}
+
+body .header .header-post-button a:hover {
+  text-decoration: none;
+}
+
+body .header .header-post-button:hover {
+  transition: transform 0.2s;
+  transform: scale(1.1);
+  background-color: linear-gradient(126deg, #02c4ca 0%, #8cfcff 100%);
+}
+
+body .article {
+  width: 100%;
+  height: 100vh;
+  margin: 0 !important;
+  box-sizing: border-box;
+  padding: 40px 3% 0 3%;
+  font-family: "Source Han Sans Regular", sans-serif !important;
+}
+
+body .article .home .home-list .title {
+  font-size: 2em;
+  color: white;
+}
+
+body .article h1 {
+  font-weight: bolder;
+  font-size: 5em !important;
+  color: white !important;
+}
+
+body .article .form {
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  background-color: white;
+}
+
+@media screen and (max-width: 900px) {
+  body .header {
+    /*アイコンも収まらなくなったら、headerを二段にする*/
+  }
+}
+
+@media screen and (max-width: 900px) and (max-width: 500px) {
+  body .header {
+    height: 80px;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 900px) and (max-width: 500px) {
+  body .header .brand {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  body .header .navbar ul {
+    padding: 0;
+  }
+
+  body .header .navbar ul li a .icon {
+    display: inline;
+  }
+
+  body .header .navbar ul li a .text {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) and (max-width: 500px) {
+  body .article {
+    padding-top: 80px !important;
+  }
+}
+

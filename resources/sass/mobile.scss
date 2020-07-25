@@ -1,0 +1,34 @@
+body {
+    .header {
+        /*アイコンも収まらなくなったら、headerを二段にする*/
+        @include mq {
+            height: $header-height * 2;
+            flex-wrap: wrap;
+        }
+        .brand { 
+            @include mq {
+                width: 100%;
+            }
+        }
+        .navbar {
+            ul {
+                padding: 0;
+                li {
+                    a{
+                        .icon {
+                            display: inline;
+                        }
+                        .text {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        } 
+    }
+    .article {
+        @include mq {
+            padding-top: $header-height * 2 !important;
+        }
+    }
+}
