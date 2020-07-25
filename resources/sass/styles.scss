@@ -43,6 +43,9 @@ body {
                             text-decoration: none;
                             color: $theme;
                         }
+                        &.active {
+                            color: $theme;
+                        }
                         .icon {
                             display: none;
                         }
@@ -98,12 +101,6 @@ body {
                     color: white;
                 }
             }
-        }
-
-        h1 {
-            font-weight: bolder;
-            font-size: 5em !important;
-            color: white !important;
         }
 
         //form

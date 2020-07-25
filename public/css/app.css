@@ -61,6 +61,10 @@ body .header .navbar ul li a:hover {
   color: #f34b3f;
 }
 
+body .header .navbar ul li a.active {
+  color: #f34b3f;
+}
+
 body .header .navbar ul li a .icon {
   display: none;
 }
@@ -109,12 +113,6 @@ body .article {
 body .article .home .home-list .title {
   font-size: 2em;
   color: white;
-}
-
-body .article h1 {
-  font-weight: bolder;
-  font-size: 5em !important;
-  color: white !important;
 }
 
 body .article .form {

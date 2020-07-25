@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'StaticpagesController@index')->name('index');
+Route::get('/', 'PagesController@index')->name('index');
 
 Auth::routes();
 

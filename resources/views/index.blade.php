@@ -1,7 +1,7 @@
 @extends('layouts.main')
+@section('active', '1')
 @section('article-main')
 <div class="home">
-    <h1>Home</h1>
     <div class="home-list" id="highlight">
         <p class="title">Recommended for you</p>
     </div>
