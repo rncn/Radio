@@ -108,8 +108,40 @@ body {
         .form {
             width: 100%;
             height: 100%;
-            margin: 0 !important;
-            background-color: white;
+            margin: 0;
+            display: flex;
+            background: linear-gradient(80deg, rgb(14, 69, 70) 16%, rgb(13, 121, 122) 50%, rgba(0,0,0,1) 50%, $body-bg 97%);
+            color: $body-color !important;
+            .mainform {
+                width: 50%;
+                label {
+                    font-size: 1.5em;
+                }
+
+                input {
+                    background: none;
+                    border: none;
+                    border-bottom: solid 2px #ffffff;
+                    color: $body-color;
+                    transition: border .2s;
+                    &:focus {
+                        transition: border .2s;
+                        border-bottom: solid 2px $theme;
+                    }
+                }
+            }
+            .description {
+                width: 50%;
+                text-align: center;
+
+                h1 {
+                    text-align: center;
+                    font-family: $font-family-sans-serif;
+                    font-weight: 900;
+                    font-size: 5em;
+                    color: $body-color !important;
+                }
+            }
         }
 
 

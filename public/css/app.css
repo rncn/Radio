@@ -118,8 +118,44 @@ body .article .home .home-list .title {
 body .article .form {
   width: 100%;
   height: 100%;
-  margin: 0 !important;
-  background-color: white;
+  margin: 0;
+  display: flex;
+  background: linear-gradient(80deg, #0e4546 16%, #0d797a 50%, black 50%, #1f1f1f 97%);
+  color: #e0e0e0 !important;
+}
+
+body .article .form .mainform {
+  width: 50%;
+}
+
+body .article .form .mainform label {
+  font-size: 1.5em;
+}
+
+body .article .form .mainform input {
+  background: none;
+  border: none;
+  border-bottom: solid 2px #ffffff;
+  color: #e0e0e0;
+  transition: border 0.2s;
+}
+
+body .article .form .mainform input:focus {
+  transition: border 0.2s;
+  border-bottom: solid 2px #f34b3f;
+}
+
+body .article .form .description {
+  width: 50%;
+  text-align: center;
+}
+
+body .article .form .description h1 {
+  text-align: center;
+  font-family: "Source Han Sans Regular", sans-serif;
+  font-weight: 900;
+  font-size: 5em;
+  color: #e0e0e0 !important;
 }
 
 @media screen and (max-width: 900px) {
