@@ -101,12 +101,42 @@ body .header .header-post-button:hover {
   background-color: linear-gradient(126deg, #02c4ca 0%, #8cfcff 100%);
 }
 
+body .header .dropdown {
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 5px 0;
+  background-color: #000000;
+}
+
+body .header .dropdown ul {
+  width: 100%;
+  list-style: none;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body .header .dropdown ul a {
+  width: 100%;
+  display: block;
+  color: #e0e0e0;
+  text-decoration: none;
+}
+
+body .header .dropdown ul a li {
+  box-sizing: border-box;
+  padding: 0 3%;
+}
+
+body .header .dropdown ul a li:hover {
+  background-color: #f34b3f;
+}
+
 body .article {
   width: 100%;
   height: 100vh;
   margin: 0 !important;
   box-sizing: border-box;
-  padding: 40px 3% 0 3%;
+  padding: 40px 3% 64px 3%;
   font-family: "Source Han Sans Regular", sans-serif !important;
 }
 
@@ -156,6 +186,65 @@ body .article .form .description h1 {
   font-weight: 900;
   font-size: 5em;
   color: #e0e0e0 !important;
+}
+
+body .player {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #1f1f1f;
+  box-shadow: 0 0 2px 2px #1a1a1a;
+}
+
+body .player .controller {
+  width: 64px;
+  height: 64px;
+  box-sizing: border-box;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 34px;
+  color: white;
+  cursor: pointer;
+}
+
+body .player .controller:hover {
+  color: #bdbdbd;
+}
+
+body .player audio {
+  display: none;
+}
+
+body .player .title {
+  box-sizing: border-box;
+  padding: 0 5px;
+  color: white;
+}
+
+body .player .seekbar {
+  margin: 0 20px;
+  background: linear-gradient(#f34b3f, #f34b3f) no-repeat #eee;
+  width: 100%;
+  height: 5px;
+  transition: height 0.2s;
+}
+
+body .player .seekbar:hover {
+  height: 20px;
+  transition: height 0.2s;
+}
+
+body .player .player-menu {
+  width: 350px;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 @media screen and (max-width: 900px) {

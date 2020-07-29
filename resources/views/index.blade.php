@@ -11,5 +11,15 @@
     <div class="home-list" id="favorite">
         <p class="title">Latest</p>
     </div>
+    
+    <script>
+        const app = new Vue({
+            el: '#app',
+
+            data: {
+                testVal: 'Hello World!' //testValを定義
+            }
+        });
+    </script>
 </div>
 @endsection
