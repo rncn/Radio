@@ -115,6 +115,7 @@ body {
         margin: 0 !important;
         box-sizing: border-box;
         padding: $header-height 3% $player-height 3%;
+        overflow-y: auto;
         font-family: $font-family-sans-serif !important;
 
         .home {
@@ -221,8 +222,11 @@ body {
             }
         }
         .player-menu {
-            width: 350px;
-            max-height: 80vh;
+            position: fixed !important;
+            top: 0 !important;
+            left: 50% !important;
+            width: 50% !important;
+            height: 100vh !important;
             overflow-y: auto;
         }
     }

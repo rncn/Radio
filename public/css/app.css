@@ -137,6 +137,7 @@ body .article {
   margin: 0 !important;
   box-sizing: border-box;
   padding: 40px 3% 64px 3%;
+  overflow-y: auto;
   font-family: "Source Han Sans Regular", sans-serif !important;
 }
 
@@ -242,8 +243,11 @@ body .player .seekbar:hover {
 }
 
 body .player .player-menu {
-  width: 350px;
-  max-height: 80vh;
+  position: fixed !important;
+  top: 0 !important;
+  left: 50% !important;
+  width: 50% !important;
+  height: 100vh !important;
   overflow-y: auto;
 }
 

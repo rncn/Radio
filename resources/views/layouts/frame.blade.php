@@ -19,7 +19,7 @@
         <div class="player" data-barba="wrapper">
             {{-- セッションから取り出し --}}
                 @if($value = session('playnow'))
-                    <div id="seekbar" clasS="seekbar"></div>
+                    <div id="seekbar" class="seekbar"></div>
                     <button class="controller" id="prev"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" width="1em" fill="currentColor"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
                     <button class="controller" id="play"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" width="1em" fill="currentColor"><path d="M0 0h24v24H0z" fill="none"/><path d="M8 5v14l11-7z"/></svg></button>
                     <button class="controller" id="next"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" width="1em" fill="currentColor"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></button>
@@ -34,10 +34,9 @@
                     <div class="player-menu" uk-dropdown="pos: top-center; mode: click;">
                         <a href="/post/{{ session('playnow')->id }}"><h2>{{ session('playnow')->title }}</h2></a>
                         <p>{!! nl2br(e(session('playnow')->content)) !!}</p>
-<pre>
-$ post --info
-投稿:{{ session('playnow')->created_at }}
-</pre>
+                    <div class="uk-text-primary">
+                    投稿:{{ session('playnow')->created_at }}
+                    </div>
                     </div>
                     <p id="duration">00:00</p>
                 @endif
@@ -71,9 +70,14 @@ $ post --info
             var play = document.getElementById('play');
             var next = document.getElementById('next');
             var audio = document.getElementById('player');
+            {{-- 長さを代入 --}}
+            document.getElementById('current').innerHTML = playTime(Math.floor(audio.currentTime));
+            document.getElementById('duration').innerHTML = playTime(Math.floor(audio.duration));
+
             audio.addEventListener("timeupdate", (e) => {
                 const current = Math.floor(audio.currentTime);
                 const duration = Math.round(audio.duration);
+                {{-- 長さを代入 --}}
                 document.getElementById('current').innerHTML = playTime(current);
                 document.getElementById('duration').innerHTML = playTime(duration);
                 const percent = Math.round((audio.currentTime/audio.duration)*1000)/10;
@@ -81,6 +85,7 @@ $ post --info
             });
 
             play.onclick = function () {
+                {{-- 再生してるか判断 再生・一時停止 --}}
                 if(audio.paused) {
                     audio.play();
                     play.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" width="1em" fill="currentColor"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
