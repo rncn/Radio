@@ -29,16 +29,30 @@
                         <code>audio</code> element.
                     </audio>
                     <p class="title">{{ session('playnow')->title }}</p>
-                    <p id="current">00:00</p>
-                    <button >情報</button>
                     <div class="player-menu" uk-dropdown="pos: top-center; mode: click;">
-                        <a href="/post/{{ session('playnow')->id }}"><h2>{{ session('playnow')->title }}</h2></a>
+                        <h2>{{ session('playnow')->title }}</h2>
                         <p>{!! nl2br(e(session('playnow')->content)) !!}</p>
-                    <div class="uk-text-primary">
-                    投稿:{{ session('playnow')->created_at }}
+                        <div class="uk-text-primary">
+                        投稿:{{ session('playnow')->created_at }}
+                        </div>
                     </div>
-                    </div>
+                    <p id="current">00:00</p>
+                    <button class="nextgb">ふぁぼ</button>
                     <p id="duration">00:00</p>
+
+                    {{-- アドレスが /post/$idだったら詳細を表示 --}}
+                    @if(Request::is('post/'.session('playnow')->id ))
+                    <div id="modal-close-default" uk-modal class="uk-modal uk-open" style="display: block;">
+                        <div class="uk-modal-dialog uk-modal-body">
+                            <a class="uk-modal-close" href="{{ route('index') }}">Return</a>
+                            <h2>{{ session('playnow')->title }}</h2>
+                            <p>{!! nl2br(e(session('playnow')->content)) !!}</p>
+                            <div class="uk-text-primary">
+                            投稿:{{ session('playnow')->created_at }}
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                 @endif
         </div>
         {{-- 非同期処理 --}}
@@ -54,14 +68,14 @@
                     e.stopPropagation()
                     return
                 }
-            }
+            };
 
             const links = [...document.querySelectorAll('a[href]')]
                 links.forEach(link => {
                 link.addEventListener('click', e => {
                     eventDelete(e)
                 }, false)
-            })
+            });
 
         </script>
         {{-- <audio>操作</audio> --}}

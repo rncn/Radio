@@ -2,24 +2,26 @@
 @section('active', '1')
 @section('article-main')
 <div class="home">
-    <div class="home-list" id="highlight">
-        <p class="title">Recommended for you</p>
+  @if(Auth::check())
+  
+  @endif
+  <div class="home-wrapper">
+    <div class="home-nav">
+      <p>トレンド</p>
+      <ol style="list-style-type: hebrew;">
+        <li><a href="trending">とれんどってるてぃんうぃ？？？？？？？？？？？</a></li>
+        <li><a href="trending">とれんどってるてぃんうぃ？？？？？？？？？？？</a></li>
+        <li><a href="trending">とれんどってるてぃんうぃ？？？？？？？？？？？</a></li>
+      </ol>
     </div>
-    <div class="home-list" id="favorite">
-        <p class="title">Your favorites</p>
+    <div class="home-tl">
+      <div class="showcase" style="background-image: url(https://cdn.pixabay.com/photo/2020/07/03/06/12/people-5365324_1280.jpg);">
+        <div class="content">
+          <p>Recommended</p>
+          <h2>EasyDocPrimary2020</h2>
+        </div>
+      </div>
     </div>
-    <div class="home-list" id="favorite">
-        <p class="title">Latest</p>
-    </div>
-    
-    <script>
-        const app = new Vue({
-            el: '#app',
-
-            data: {
-                testVal: 'Hello World!' //testValを定義
-            }
-        });
-    </script>
+  </div>
 </div>
 @endsection

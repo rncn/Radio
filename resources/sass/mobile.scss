@@ -15,12 +15,7 @@ body {
                 padding: 0;
                 li {
                     a{
-                        .icon {
-                            display: inline;
-                        }
-                        .text {
-                            display: none;
-                        }
+                        
                     }
                 }
             }
@@ -29,6 +24,13 @@ body {
     .article {
         @include mq {
             padding-top: $header-height * 2 !important;
+        }
+    }
+    .player {
+        .player-menu {
+            top: 0 !important;
+            left: 10% !important;
+            width: 80% !important;
         }
     }
 }

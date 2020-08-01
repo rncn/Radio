@@ -15,6 +15,7 @@ body {
         justify-content: space-between;
         align-items: center;
         background-color: $header;
+        z-index: 9;
 
         .brand {
             margin: 0;
@@ -45,12 +46,6 @@ body {
                         }
                         &.active {
                             color: $theme;
-                        }
-                        .icon {
-                            display: none;
-                        }
-                        .text {
-                            display: inline;
                         }
                     }
                 }
@@ -86,6 +81,7 @@ body {
             border-radius: 5px;
             box-sizing: border-box;
             padding: 5px 0;
+            flex: none;
             background-color: $header;
             ul {
                 width: 100%;
@@ -117,17 +113,6 @@ body {
         padding: $header-height 3% $player-height 3%;
         overflow-y: auto;
         font-family: $font-family-sans-serif !important;
-
-        .home {
-
-            .home-list {
-
-                .title {
-                    font-size: 2em;
-                    color: white;
-                }
-            }
-        }
 
         //form
 
@@ -169,6 +154,62 @@ body {
                 }
             }
         }
+        .home {
+            width: 100%;
+            height: 100%;
+
+            .home-wrapper {
+                width: 100%;
+                height: 100%;
+                display: flex;
+
+                .home-nav {
+                    width: 20%;
+                    height: 100%;
+                    overflow-y: auto;
+                    background-color: white;
+                }
+                .home-tl {
+                    width: 80%;
+                    height: 100%;
+                    overflow-y: auto;
+
+                    .showcase {
+                        width: 100%;
+                        height: 240px;
+                        background-color: white;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        transition: transform .2s, width .2s;
+                        .content {
+                            width: 40%;
+                            height: 100%;
+                            background-color: rgba(34, 133, 226, 0.475);
+        
+                            h2 {
+                                width: 100%;
+                                height: 220px;
+                                margin: 0;
+                                box-sizing: border-box;
+                                padding: 0 10px;
+                                line-height: 220px;
+                                color: white;
+                                overflow: hidden;
+                            }
+                            p {
+                                color: white;
+                                margin: 0;
+                                line-height: 20px;
+                            }
+                        }
+                        &:hover {
+                            opacity: 0.9;
+                        }
+                    }
+                }
+            }
+        }
 
 
     }
@@ -184,6 +225,7 @@ body {
         align-items: center;
         background-color: $body-bg;
         box-shadow: 0 0 2px 2px #1a1a1a;
+        z-index: 10;
 
         .controller {
             width: $player-height;
@@ -229,5 +271,24 @@ body {
             height: 100vh !important;
             overflow-y: auto;
         }
+    }
+    .nextgb {
+        border-left: solid 2px #b6b6b6;
+        border-top: solid 2px #b6b6b6;
+        border-bottom: solid 2px #6d6d6d;
+        border-right: solid 2px #949494;
+        background-color: rgb(190, 190, 190);
+        outline: none;
+
+        &:hover, &:focus {
+            border-right: solid 2px #b6b6b6;
+            border-bottom: solid 2px #b6b6b6;
+            border-top: solid 2px #6d6d6d;
+            border-left: solid 2px #949494;
+            background-color: rgb(175, 175, 175);
+        }
+    }
+    .nextgb:hover & {
+        background-color: #00ff00;
     }
 }

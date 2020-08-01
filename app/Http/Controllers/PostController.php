@@ -16,8 +16,8 @@ class PostController extends Controller
     public function create(Request $request)
     {
         $validatedData = $request->validate([
-            'title' => 'required|unique:posts|max:255',
-            'content' => 'required',
+            'title' => 'required|max:255',
+            'content' => 'required|max:3000',
             'radio' => 'required',
         ]);
 
@@ -47,11 +47,7 @@ class PostController extends Controller
     {
         //セッションに保存
         session(['playnow' => $post]);
-        return view('posts/detail', [
-            'title' => $post->title,
-            'content' => $post->content,
-            'audiofile' => $post->audio_path,
-            'user_id' => $post->user_id,
-        ]);
+        //urlが/post/...だったら自動的に詳細ダイアログがでます
+        return view('index');
     }
 }
