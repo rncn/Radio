@@ -4,11 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {{-- uikit --}}
-        <link rel="stylesheet" href="/css/uikit.min.css">
-        <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/css/uikit.min.css" async>
+        <link rel="stylesheet" href="/css/app.css" async>
         <script src="/js/uikit.min.js"></script>
-        <script src="/js/uikit-icons.min.js"></script>
-        <script src="/js/howler.min.js"></script>
+        <script src="/js/uikit-icons.min.js" async></script>
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ config('app.name') }}</title>
     </head>
@@ -28,31 +27,10 @@
                         Your browser does not support the
                         <code>audio</code> element.
                     </audio>
-                    <p class="title">{{ session('playnow')->title }}</p>
-                    <div class="player-menu" uk-dropdown="pos: top-center; mode: click;">
-                        <h2>{{ session('playnow')->title }}</h2>
-                        <p>{!! nl2br(e(session('playnow')->content)) !!}</p>
-                        <div class="uk-text-primary">
-                        投稿:{{ session('playnow')->created_at }}
-                        </div>
-                    </div>
+                    <p class="title"><a href="{{ route('posts.detail',[ 'post'=>session('playnow')->id ]) }}">{{ session('playnow')->title }}</a></p>
                     <p id="current">00:00</p>
-                    <button class="nextgb">ふぁぼ</button>
+                    <button class="nextgb">Like</button>
                     <p id="duration">00:00</p>
-
-                    {{-- アドレスが /post/$idだったら詳細を表示 --}}
-                    @if(Request::is('post/'.session('playnow')->id ))
-                    <div id="modal-close-default" uk-modal class="uk-modal uk-open" style="display: block;">
-                        <div class="uk-modal-dialog uk-modal-body">
-                            <a class="uk-modal-close" href="{{ route('index') }}">Return</a>
-                            <h2>{{ session('playnow')->title }}</h2>
-                            <p>{!! nl2br(e(session('playnow')->content)) !!}</p>
-                            <div class="uk-text-primary">
-                            投稿:{{ session('playnow')->created_at }}
-                            </div>
-                        </div>
-                    </div>
-                    @endif
                 @endif
         </div>
         {{-- 非同期処理 --}}

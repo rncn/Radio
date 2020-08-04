@@ -1,27 +1,22 @@
 // Body
-$body-bg: #1f1f1f;
-$body-color: #e0e0e0;
+$body-bg: #dadada;
+$body-color: #636363;
 //$theme: #02c4ca;
 $theme: #f34b3f;
 //header 
 $header-height: 40px;
-$header: #000000;
-$header-color: #ffffff;
+$header: #dddddd;
+$header-color: #7c7c7c;
 //player
 $player-height: 64px;
 // Typography
 $font-family-sans-serif: "Source Han Sans Regular", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
-
-// Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66d9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6bb1eb;
+// navbar
+$navbar-bg: #3f3f3f;
+$navbar-border: #797979;
+$navbar-color: $body-color;
+$navbar-theme-hov: #100483;
+//button
+$button-bg: linear-gradient(145deg, #e9e9e9, #c4c4c4);
