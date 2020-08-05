@@ -1,6 +1,8 @@
 // Body
 $body-bg: #dadada;
 $body-color: #636363;
+$body-shadow-1: #c0c0c0;
+$body-shadow-2: #f4f4f4; 
 //$theme: #02c4ca;
 $theme: #f34b3f;
 //header 
@@ -16,7 +18,11 @@ $line-height-base: 1.6;
 // navbar
 $navbar-bg: #3f3f3f;
 $navbar-border: #797979;
-$navbar-color: $body-color;
-$navbar-theme-hov: #100483;
+$navbar-color: $body-bg;
+$navbar-theme-hov: #252053;
+//timeline-card
+$padding-horizontal: 10px;
+$card-shadow:  9px 9px 18px $body-shadow-1, -9px -9px 18px $body-shadow-2;
+$card-shadow-hover:  3px 3px 6px $body-shadow-1, -3px -3px 6px $body-shadow-2;
 //button
 $button-bg: linear-gradient(145deg, #e9e9e9, #c4c4c4);

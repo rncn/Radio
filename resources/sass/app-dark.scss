@@ -1,0 +1,24 @@
+$breakpoint: 500px;
+$breakpoint-md: 900px;
+//for mobile
+@mixin mq-md {
+    @media screen and (max-width: $breakpoint-md) {
+      @content;
+    }
+}
+@mixin mq {
+    @media screen and (max-width: $breakpoint) {
+      @content;
+    }
+}
+
+// Variables
+@import 'variables';
+//font
+@import 'font';
+// CustomStyle
+@import 'styles';
+//Mobile
+@include mq-md {
+    @import 'mobile';
+}
