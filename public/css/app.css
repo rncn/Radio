@@ -11,6 +11,8 @@ body {
   min-height: 100vh;
   font-family: "Source Han Sans Regular", sans-serif !important;
   font-weight: 900;
+  scroll-behavior: smooth;
+  /*App*/
 }
 
 body .header {
@@ -86,7 +88,7 @@ body .header .header-post-button {
 body .header .header-post-button a {
   display: block;
   line-height: 35px;
-  color: #f34b3f;
+  color: #252053;
 }
 
 body .header .header-post-button a:hover {
@@ -147,7 +149,7 @@ body .article .form {
   height: 100%;
   margin: auto;
   box-sizing: border-box;
-  padding: 80px 0 0 0;
+  padding: 80px 0 64px 0;
   display: flex;
   background: #dadada;
   color: #636363 !important;
@@ -194,6 +196,7 @@ body .article .form .mainform .form-alert {
 }
 
 body .article .form .mainform .form-button {
+  display: block;
   margin: 10px;
   box-sizing: border-box;
   padding: 10px 20px;
@@ -207,6 +210,27 @@ body .article .form .mainform .form-button {
 
 body .article .form .mainform .form-button:hover {
   box-shadow: 3px 3px 6px #c0c0c0, -3px -3px 6px #f4f4f4;
+  transition: box-shadow 0.2s;
+}
+
+body .article .form .mainform .form-textarea {
+  display: block;
+  width: 100%;
+  height: 30vh;
+  box-sizing: border-box;
+  padding: 15px 15px;
+  background: #dadada;
+  border-radius: 20px;
+  box-shadow: inset 5px 5px 10px #a1a1a1, inset -5px -5px 10px #ffffff;
+  border: none;
+  outline: none;
+  color: #636363;
+  transition: box-shadow 0.2s;
+  resize: none;
+}
+
+body .article .form .mainform .form-textarea:focus {
+  box-shadow: inset 2px 2px 4px #a1a1a1, inset -2px -2px 4px #ffffff;
   transition: box-shadow 0.2s;
 }
 
@@ -266,6 +290,10 @@ body .article .home .home-wrapper .home-nav section {
   transition: box-shadow 0.2s;
 }
 
+body .article .home .home-wrapper .home-nav section h2 {
+  margin-bottom: 20px;
+}
+
 body .article .home .home-wrapper .home-nav section h3 {
   margin: 0;
   font-size: 2em;
@@ -304,6 +332,30 @@ body .article .home .home-wrapper .home-nav section:hover {
   transition: box-shadow 0.2s;
 }
 
+body .article .home .home-wrapper .home-nav section .followbutton {
+  display: block;
+  margin: 10px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  background-color: #dadada;
+  color: #636363;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  box-shadow: 9px 9px 18px #c0c0c0, -9px -9px 18px #f4f4f4;
+  transition: box-shadow 0.2s;
+}
+
+body .article .home .home-wrapper .home-nav section .followbutton:hover {
+  box-shadow: 3px 3px 6px #c0c0c0, -3px -3px 6px #f4f4f4;
+  transition: box-shadow 0.2s;
+}
+
+body .article .home .home-wrapper .home-nav section .followbutton.active {
+  box-shadow: 3px 3px 6px #c0c0c0, -3px -3px 6px #f4f4f4;
+  background-color: #f34b3f;
+}
+
 body .article .home .home-wrapper .home-tl {
   width: 70%;
   height: 100%;
@@ -320,6 +372,25 @@ body .article .home .home-wrapper .home-tl .alert-card {
   background-color: #dadada;
   border-radius: 15px;
   box-shadow: 9px 9px 18px #c0c0c0, -9px -9px 18px #f4f4f4;
+}
+
+body .article .home .home-wrapper .home-tl .alert-card .alert-header {
+  font-family: "Source Han Sans Regular", sans-serif;
+  font-size: 10em;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #f34b3f;
+          text-decoration-color: #f34b3f;
+  color: #252053;
+}
+
+body .article .home .home-wrapper .home-tl .alert-card .alert-descr {
+  font-size: 1.5em;
+  color: #636363;
+}
+
+body .article .home .home-wrapper .home-tl .alert-card em {
+  font-style: normal;
+  color: #f34b3f;
 }
 
 body .article .home .home-wrapper .home-tl .showcase {
@@ -461,12 +532,13 @@ body .player .player-menu {
 }
 
 body .nextgb {
+  background-color: #252053;
   border-left: solid 2px #b6b6b6;
   border-top: solid 2px #b6b6b6;
   border-bottom: solid 2px #6d6d6d;
   border-right: solid 2px #949494;
-  background-color: #bebebe;
   outline: none;
+  color: #dadada;
 }
 
 body .nextgb:hover,
@@ -475,7 +547,18 @@ body .nextgb:focus {
   border-bottom: solid 2px #b6b6b6;
   border-top: solid 2px #6d6d6d;
   border-left: solid 2px #949494;
-  background-color: #afafaf;
+}
+
+body .nextgb.active {
+  background-color: #f34b3f;
+  border-right: solid 2px #b6b6b6;
+  border-bottom: solid 2px #b6b6b6;
+  border-top: solid 2px #6d6d6d;
+  border-left: solid 2px #949494;
+}
+
+body app-userinfo * {
+  margin: 0;
 }
 
 .nextgb:hover body {

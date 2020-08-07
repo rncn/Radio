@@ -7,12 +7,24 @@
                         @csrf
 
                         <div class="form-item">
-                            <label for="name">{{ __('Name') }}</label>
+                            <label for="name">{{ __('ID') }}</label>
 
                             <input id="name" type="text" class="uk-input @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                             @error('name')
                                 <div class="invalid-feedback uk-alert-danger" uk-alert>
+                                        <strong>{{ $message }}</strong>
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-item">
+                            <label for="displayname">{{ __('Display name') }}</label>
+
+                            <input id="displayname" type="text" name="displayname" value="{{ old('displayname') }}" required>
+
+                            @error('displayname')
+                                <div class="invalid-feedback uk-alert-danger" class="form-alert">
                                         <strong>{{ $message }}</strong>
                                 </div>
                             @enderror
@@ -25,6 +37,18 @@
 
                             @error('email')
                                 <div class="invalid-feedback uk-alert-danger" uk-alert>
+                                        <strong>{{ $message }}</strong>
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-item">
+                            <label for="description">{{ __('Account bio') }}</label>
+
+                            <textarea id="description" class="form-textarea" name="description" value="{!! old('description') !!}" required></textarea>
+
+                            @error('description')
+                                <div class="invalid-feedback uk-alert-danger" class="form-alert">
                                         <strong>{{ $message }}</strong>
                                 </div>
                             @enderror
