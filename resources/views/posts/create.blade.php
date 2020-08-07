@@ -16,7 +16,7 @@
               @enderror
               <div class="form-content">
                 <label for="content" class="form-content">内容</label> 
-                <textarea class="form-button" name="content" cols="50" rows="10">{{ old('content') }}</textarea>        
+                <textarea class="form-textarea" name="content" cols="50" rows="10">{{ old('content') }}</textarea>        
               </div>
               @error('content')
                   <div class="invalid-feedback form-alert">

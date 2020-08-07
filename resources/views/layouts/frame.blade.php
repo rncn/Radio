@@ -8,7 +8,16 @@
         <link rel="stylesheet" href="/css/app.css" async>
         <script src="/js/uikit.min.js"></script>
         <script src="/js/uikit-icons.min.js" async></script>
+        <!--favicon-->
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/favicon/site.webmanifest">
+        <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#7bc15f">
+        <meta name="msapplication-TileColor" content="#2b5797">
+        <meta name="theme-color" content="#ffffff">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <!---->
         <title>{{ config('app.name') }}</title>
     </head>
     <body data-barba="wrapper">
@@ -22,7 +31,6 @@
                     <button class="controller" id="prev"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" width="1em" fill="currentColor"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
                     <button class="controller" id="play"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" width="1em" fill="currentColor"><path d="M0 0h24v24H0z" fill="none"/><path d="M8 5v14l11-7z"/></svg></button>
                     <button class="controller" id="next"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" width="1em" fill="currentColor"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></button>
-                    <!--<button class="controller"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" width="1em" fill="currentColor"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg></button>-->
                     <audio id="player" controls src="{{ asset(session('playnow')->audio_path) }}">
                         Your browser does not support the
                         <code>audio</code> element.
